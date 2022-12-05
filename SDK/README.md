@@ -1,65 +1,56 @@
-# Uniswap Interface
+# Uniswap SDK
 
-[![Tests](https://github.com/Uniswap/uniswap-interface/workflows/Tests/badge.svg)](https://github.com/Uniswap/uniswap-interface/actions?query=workflow%3ATests)
-[![Styled With Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![Actions Status](https://github.com/Uniswap/uniswap-sdk/workflows/CI/badge.svg)](https://github.com/Uniswap/uniswap-sdk)
+[![npm version](https://img.shields.io/npm/v/@uniswap/sdk/latest.svg)](https://www.npmjs.com/package/@uniswap/sdk/v/latest)
+[![npm bundle size (scoped version)](https://img.shields.io/bundlephobia/minzip/@uniswap/sdk/latest.svg)](https://bundlephobia.com/result?p=@uniswap/sdk@latest)
 
-An open source interface for Uniswap -- a protocol for decentralized exchange of Ethereum tokens.
+In-depth documentation on this SDK is available at [uniswap.org](https://uniswap.org/docs/v2/SDK/getting-started/).
 
-- Website: [uniswap.org](https://uniswap.org/)
-- Interface: [app.uniswap.org](https://app.uniswap.org)
-- Docs: [uniswap.org/docs/](https://uniswap.org/docs/)
-- Twitter: [@UniswapProtocol](https://twitter.com/UniswapProtocol)
-- Reddit: [/r/Uniswap](https://www.reddit.com/r/Uniswap/)
-- Email: [contact@uniswap.org](mailto:contact@uniswap.org)
-- Discord: [Uniswap](https://discord.gg/Y7TF6QA)
-- Whitepaper: [Link](https://hackmd.io/C-DvwDSfSxuh-Gd4WKE_ig)
+## Running tests
 
-## Accessing the Uniswap Interface
+To run the tests, follow these steps. You must have at least node v10 and [yarn](https://yarnpkg.com/) installed.
 
-To access the Uniswap Interface, use an IPFS gateway link from the
-[latest release](https://github.com/Uniswap/uniswap-interface/releases/latest), 
-or visit [app.uniswap.org](https://app.uniswap.org).
+First clone the repository:
 
-## Listing a token
-
-Please see the
-[@uniswap/default-token-list](https://github.com/uniswap/default-token-list) 
-repository.
-
-## Development
-
-### Install Dependencies
-
-```bash
-yarn
+```sh
+git clone https://github.com/Uniswap/uniswap-sdk.git
 ```
 
-### Run
+Move into the uniswap-sdk working directory
 
-```bash
-yarn start
+```sh
+cd uniswap-sdk/
 ```
 
-### Configuring the environment (optional)
+Install dependencies
 
-To have the interface default to a different network when a wallet is not connected:
+```sh
+yarn install
+```
 
-1. Make a copy of `.env` named `.env.local`
-2. Change `REACT_APP_NETWORK_ID` to `"{YOUR_NETWORK_ID}"`
-3. Change `REACT_APP_NETWORK_URL` to e.g. `"https://{YOUR_NETWORK_ID}.infura.io/v3/{YOUR_INFURA_KEY}"` 
+Run tests
 
-Note that the interface only works on testnets where both 
-[Uniswap V2](https://uniswap.org/docs/v2/smart-contracts/factory/) and 
-[multicall](https://github.com/makerdao/multicall) are deployed.
-The interface will not work on other networks.
+```sh
+yarn test
+```
 
-## Contributions
+You should see output like the following:
 
-**Please open all pull requests against the `master` branch.** 
-CI checks will run against all PRs.
+```sh
+yarn run v1.22.4
+$ tsdx test
+ PASS  test/constants.test.ts
+ PASS  test/pair.test.ts
+ PASS  test/fraction.test.ts
+ PASS  test/miscellaneous.test.ts
+ PASS  test/entities.test.ts
+ PASS  test/trade.test.ts
 
-## Accessing Uniswap Interface V1
-
-The Uniswap Interface supports swapping against, and migrating or removing liquidity from Uniswap V1. However,
-if you would like to use Uniswap V1, the Uniswap V1 interface for mainnet and testnets is accessible via IPFS gateways 
-linked from the [v1.0.0 release](https://github.com/Uniswap/uniswap-interface/releases/tag/v1.0.0).
+Test Suites: 1 skipped, 6 passed, 6 of 7 total
+Tests:       3 skipped, 82 passed, 85 total
+Snapshots:   0 total
+Time:        5.091s
+Ran all test suites.
+✨  Done in 6.61s.
+```
