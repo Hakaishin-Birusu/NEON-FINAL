@@ -1,14 +1,14 @@
 {
-  "name": "@uniswap/sdk",
+  "name": "@neonswap/sdk",
   "license": "MIT",
   "version": "3.0.2",
-  "description": "🛠 An SDK for building applications on top of Uniswap.",
+  "description": "🛠 An SDK for building applications on top of Uniswap for Neon.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/Uniswap/uniswap-sdk.git",
+  "repository": "https://github.com/jacob-abe/neonswap-sdk.git",
   "keywords": [
     "uniswap",
     "ethereum"
@@ -22,7 +22,6 @@
     "prepublishOnly": "tsdx build"
   },
   "dependencies": {
-    "@uniswap/v2-core": "^1.0.0",
     "big.js": "^5.2.2",
     "decimal.js-light": "^2.5.0",
     "jsbi": "^3.1.1",

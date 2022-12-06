@@ -79,5 +79,8 @@ export const WETH = {
     'Wrapped Ether'
   ),
   [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6', 18, 'WETH', 'Wrapped Ether'),
-  [ChainId.KOVAN]: new Token(ChainId.KOVAN, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'WETH', 'Wrapped Ether')
+  [ChainId.KOVAN]: new Token(ChainId.KOVAN, '0xd0A1E359811322d97991E03f863a0C30C2cF029C', 18, 'WETH', 'Wrapped Ether'),
+    //Todo change mainnet address
+  [ChainId.NEON_MAINNET]: new Token(ChainId.NEON_MAINNET, '0x530976c537f6F0685218C834792AC00D9ee19a5f', 18, 'WETH9', 'Wrapped BNB'),
+  [ChainId.NEON_DEVNET]: new Token(ChainId.NEON_DEVNET, '0x530976c537f6F0685218C834792AC00D9ee19a5f', 18, 'WETH9', 'Wrapped BNB')
 }
