@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Pair, Token, Trade } from '@uniswap/sdk'
+import { Currency, CurrencyAmount, Pair, Token, Trade } from '@vixelloswap/sdk'
 import flatMap from 'lodash.flatmap'
 import { useMemo } from 'react'
 
@@ -10,7 +10,7 @@ import { useActiveWeb3React } from './index'
 
 function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency): Pair[] {
   const { chainId } = useActiveWeb3React()
-
+  //@ts-expect-error TODO Find wtf
   const bases: Token[] = chainId ? BASES_TO_CHECK_TRADES_AGAINST[chainId] : []
 
   const [tokenA, tokenB] = chainId
@@ -32,6 +32,7 @@ function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency): Pair[] {
         .filter((tokens): tokens is [Token, Token] => Boolean(tokens[0] && tokens[1]))
         .filter(([tokenA, tokenB]) => {
           if (!chainId) return true
+          //@ts-expect-error TODO Find wtf
           const customBases = CUSTOM_BASES[chainId]
           if (!customBases) return true
 
