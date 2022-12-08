@@ -23,7 +23,9 @@ export default createReducer(initialState, builder =>
   builder
     .addCase(fetchTokenList.pending, (state, { meta: { arg: url, requestId } }) => {
       state.byUrl[url] = {
+        //@ts-ignore wtf todo
         current: null,
+        //@ts-ignore wtf todo
         pendingUpdate: null,
         ...state.byUrl[url],
         loadingRequestId: requestId,
@@ -89,6 +91,7 @@ export default createReducer(initialState, builder =>
       }
     })
     .addCase(updateVersion, state => {
+      //todo change this
       delete state.byUrl['https://unpkg.com/@uniswap/default-token-list@latest/uniswap-default.tokenlist.json']
     })
 )

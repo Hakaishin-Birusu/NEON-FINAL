@@ -1,5 +1,5 @@
 import { parseBytes32String } from '@ethersproject/strings'
-import { Currency, ETHER, Token } from '@uniswap/sdk'
+import { Currency, ETHER, Token } from '@vixelloswap/sdk'
 import { useMemo } from 'react'
 import { useDefaultTokenList } from '../state/lists/hooks'
 import { NEVER_RELOAD, useSingleCallResult } from '../state/multicall/hooks'
@@ -26,6 +26,7 @@ export function useAllTokens(): { [address: string]: Token } {
           },
           // must make a copy because reduce modifies the map, and we do not
           // want to make a copy in every iteration
+          //@ts-ignore TODO Find wtf
           { ...allTokens[chainId] }
         )
     )
@@ -96,7 +97,7 @@ export function useToken(tokenAddress?: string): Token | undefined | null {
 }
 
 export function useCurrency(currencyId: string | undefined): Currency | null | undefined {
-  const isETH = currencyId?.toUpperCase() === 'ETH'
+  const isETH = currencyId?.toUpperCase() === 'NEON'
   const token = useToken(isETH ? undefined : currencyId)
   return isETH ? ETHER : token
 }

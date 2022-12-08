@@ -1,24 +1,38 @@
-import { Currency, CurrencyAmount, currencyEquals, ETHER, JSBI, Token } from '@uniswap/sdk'
-import React, { CSSProperties, memo, useContext, useMemo } from 'react'
-import { FixedSizeList } from 'react-window'
-import { Text } from 'rebass'
-import { ThemeContext } from 'styled-components'
-import { useActiveWeb3React } from '../../hooks'
-import { useAllTokens } from '../../hooks/Tokens'
-import { useDefaultTokenList } from '../../state/lists/hooks'
-import { useAddUserToken, useRemoveUserAddedToken } from '../../state/user/hooks'
-import { useETHBalances } from '../../state/wallet/hooks'
-import { LinkStyledButton, TYPE } from '../../theme'
-import { ButtonSecondary } from '../Button'
-import Column, { AutoColumn } from '../Column'
-import { RowFixed } from '../Row'
-import CurrencyLogo from '../CurrencyLogo'
-import { FadedSpan, MenuItem } from './styleds'
-import Loader from '../Loader'
-import { isDefaultToken } from '../../utils'
+import {
+  Currency,
+  CurrencyAmount,
+  currencyEquals,
+  ETHER,
+  JSBI,
+  Token,
+} from "@vixelloswap/sdk";
+import React, { CSSProperties, memo, useContext, useMemo } from "react";
+import { FixedSizeList } from "react-window";
+import { Text } from "rebass";
+import { ThemeContext } from "styled-components";
+import { useActiveWeb3React } from "../../hooks";
+import { useAllTokens } from "../../hooks/Tokens";
+import { useDefaultTokenList } from "../../state/lists/hooks";
+import {
+  useAddUserToken,
+  useRemoveUserAddedToken,
+} from "../../state/user/hooks";
+import { useETHBalances } from "../../state/wallet/hooks";
+import { LinkStyledButton, TYPE } from "../../theme";
+import { isDefaultToken } from "../../utils";
+import { ButtonSecondary } from "../Button";
+import Column, { AutoColumn } from "../Column";
+import CurrencyLogo from "../CurrencyLogo";
+import Loader from "../Loader";
+import { RowFixed } from "../Row";
+import { FadedSpan, MenuItem } from "./styleds";
 
 function currencyKey(currency: Currency): string {
-  return currency instanceof Token ? currency.address : currency === ETHER ? 'ETHER' : ''
+  return currency instanceof Token
+    ? currency.address
+    : currency === ETHER
+    ? "ETHER"
+    : "";
 }
 
 export default function CurrencyList({
@@ -27,35 +41,47 @@ export default function CurrencyList({
   selectedCurrency,
   onCurrencySelect,
   otherCurrency,
-  showSendWithSwap
+  showSendWithSwap,
 }: {
-  currencies: Currency[]
-  selectedCurrency: Currency
-  allBalances: { [tokenAddress: string]: CurrencyAmount }
-  onCurrencySelect: (currency: Currency) => void
-  otherCurrency: Currency
-  showSendWithSwap?: boolean
+  currencies: Currency[];
+  selectedCurrency: Currency;
+  allBalances: { [tokenAddress: string]: CurrencyAmount };
+  onCurrencySelect: (currency: Currency) => void;
+  otherCurrency: Currency;
+  showSendWithSwap?: boolean;
 }) {
-  const { account, chainId } = useActiveWeb3React()
-  const theme = useContext(ThemeContext)
-  const allTokens = useAllTokens()
-  const defaultTokens = useDefaultTokenList()
-  const addToken = useAddUserToken()
-  const removeToken = useRemoveUserAddedToken()
-  const ETHBalance = useETHBalances([account])[account]
+  const { account, chainId } = useActiveWeb3React();
+  const theme = useContext(ThemeContext);
+  const allTokens = useAllTokens();
+  const defaultTokens = useDefaultTokenList();
+  const addToken = useAddUserToken();
+  const removeToken = useRemoveUserAddedToken();
+  const ETHBalance = useETHBalances([account])[account];
 
   const CurrencyRow = useMemo(() => {
-    return memo(function CurrencyRow({ index, style }: { index: number; style: CSSProperties }) {
-      const currency = index === 0 ? Currency.ETHER : currencies[index - 1]
-      const key = currencyKey(currency)
-      const isDefault = isDefaultToken(defaultTokens, currency)
-      const customAdded = Boolean(!isDefault && currency instanceof Token && allTokens[currency.address])
-      const balance = currency === ETHER ? ETHBalance : allBalances[key]
+    return memo(function CurrencyRow({
+      index,
+      style,
+    }: {
+      index: number;
+      style: CSSProperties;
+    }) {
+      const currency = index === 0 ? Currency.ETHER : currencies[index - 1];
+      const key = currencyKey(currency);
+      const isDefault = isDefaultToken(defaultTokens, currency);
+      const customAdded = Boolean(
+        !isDefault && currency instanceof Token && allTokens[currency.address]
+      );
+      const balance = currency === ETHER ? ETHBalance : allBalances[key];
 
-      const zeroBalance = balance && JSBI.equal(JSBI.BigInt(0), balance.raw)
+      const zeroBalance = balance && JSBI.equal(JSBI.BigInt(0), balance.raw);
 
-      const isSelected = Boolean(selectedCurrency && currencyEquals(currency, selectedCurrency))
-      const otherSelected = Boolean(otherCurrency && currencyEquals(otherCurrency, currency))
+      const isSelected = Boolean(
+        selectedCurrency && currencyEquals(currency, selectedCurrency)
+      );
+      const otherSelected = Boolean(
+        otherCurrency && currencyEquals(otherCurrency, currency)
+      );
 
       return (
         <MenuItem
@@ -66,7 +92,11 @@ export default function CurrencyList({
           selected={otherSelected}
         >
           <RowFixed>
-            <CurrencyLogo currency={currency} size={'24px'} style={{ marginRight: '14px' }} />
+            <CurrencyLogo
+              currency={currency}
+              size={"24px"}
+              style={{ marginRight: "14px" }}
+            />
             <Column>
               <Text fontWeight={500}>{currency.symbol}</Text>
               <FadedSpan>
@@ -74,9 +104,10 @@ export default function CurrencyList({
                   <TYPE.main fontWeight={500}>
                     Added by user
                     <LinkStyledButton
-                      onClick={event => {
-                        event.stopPropagation()
-                        if (currency instanceof Token) removeToken(chainId, currency.address)
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        if (currency instanceof Token)
+                          removeToken(chainId, currency.address);
                       }}
                     >
                       (Remove)
@@ -87,9 +118,9 @@ export default function CurrencyList({
                   <TYPE.main fontWeight={500}>
                     Found by address
                     <LinkStyledButton
-                      onClick={event => {
-                        event.stopPropagation()
-                        if (currency instanceof Token) addToken(currency)
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        if (currency instanceof Token) addToken(currency);
                       }}
                     >
                       (Add)
@@ -103,26 +134,31 @@ export default function CurrencyList({
             {balance ? (
               <Text>
                 {zeroBalance && showSendWithSwap ? (
-                  <ButtonSecondary padding={'4px 8px'}>
-                    <Text textAlign="center" fontWeight={500} fontSize={14} color={theme.primary1}>
+                  <ButtonSecondary padding={"4px 8px"}>
+                    <Text
+                      textAlign="center"
+                      fontWeight={500}
+                      fontSize={14}
+                      color={theme.primary1}
+                    >
                       Send With Swap
                     </Text>
                   </ButtonSecondary>
                 ) : balance ? (
                   balance.toSignificant(6)
                 ) : (
-                  '-'
+                  "-"
                 )}
               </Text>
             ) : account ? (
               <Loader />
             ) : (
-              '-'
+              "-"
             )}
           </AutoColumn>
         </MenuItem>
-      )
-    })
+      );
+    });
   }, [
     ETHBalance,
     account,
@@ -137,8 +173,8 @@ export default function CurrencyList({
     removeToken,
     selectedCurrency,
     showSendWithSwap,
-    theme.primary1
-  ])
+    theme.primary1,
+  ]);
 
   return (
     <FixedSizeList
@@ -146,10 +182,10 @@ export default function CurrencyList({
       height={500}
       itemCount={currencies.length + 1}
       itemSize={56}
-      style={{ flex: '1' }}
-      itemKey={index => currencyKey(currencies[index])}
+      style={{ flex: "1" }}
+      itemKey={(index) => currencyKey(currencies[index])}
     >
       {CurrencyRow}
     </FixedSizeList>
-  )
+  );
 }

@@ -1,7 +1,5 @@
-import useENS from '../../hooks/useENS'
-import { Version } from '../../hooks/useToggledVersion'
 import { parseUnits } from '@ethersproject/units'
-import { Currency, CurrencyAmount, ETHER, JSBI, Token, TokenAmount, Trade } from '@uniswap/sdk'
+import { Currency, CurrencyAmount, ETHER, JSBI, Token, TokenAmount, Trade } from '@vixelloswap/sdk'
 import { ParsedQs } from 'qs'
 import { useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -9,15 +7,16 @@ import { useV1Trade } from '../../data/V1'
 import { useActiveWeb3React } from '../../hooks'
 import { useCurrency } from '../../hooks/Tokens'
 import { useTradeExactIn, useTradeExactOut } from '../../hooks/Trades'
+import useENS from '../../hooks/useENS'
 import useParsedQueryString from '../../hooks/useParsedQueryString'
+import useToggledVersion, { Version } from '../../hooks/useToggledVersion'
 import { isAddress } from '../../utils'
+import { computeSlippageAdjustedAmounts } from '../../utils/prices'
 import { AppDispatch, AppState } from '../index'
+import { useUserSlippageTolerance } from '../user/hooks'
 import { useCurrencyBalances } from '../wallet/hooks'
 import { Field, replaceSwapState, selectCurrency, setRecipient, switchCurrencies, typeInput } from './actions'
 import { SwapState } from './reducer'
-import useToggledVersion from '../../hooks/useToggledVersion'
-import { useUserSlippageTolerance } from '../user/hooks'
-import { computeSlippageAdjustedAmounts } from '../../utils/prices'
 
 export function useSwapState(): AppState['swap'] {
   return useSelector<AppState, AppState['swap']>(state => state.swap)
@@ -35,7 +34,7 @@ export function useSwapActionHandlers(): {
       dispatch(
         selectCurrency({
           field,
-          currencyId: currency instanceof Token ? currency.address : currency === ETHER ? 'ETH' : ''
+          currencyId: currency instanceof Token ? currency.address : currency === ETHER ? 'NEON' : ''
         })
       )
     },
@@ -194,10 +193,10 @@ function parseCurrencyFromURLParameter(urlParam: any): string {
   if (typeof urlParam === 'string') {
     const valid = isAddress(urlParam)
     if (valid) return valid
-    if (urlParam.toUpperCase() === 'ETH') return 'ETH'
-    if (valid === false) return 'ETH'
+    if (urlParam.toUpperCase() === 'NEON') return 'NEON'
+    if (valid === false) return 'NEON'
   }
-  return 'ETH' ?? ''
+  return 'NEON' ?? ''
 }
 
 function parseTokenAmountURLParameter(urlParam: any): string {
