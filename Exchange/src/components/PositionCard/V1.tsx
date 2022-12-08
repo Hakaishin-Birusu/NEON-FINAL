@@ -1,5 +1,5 @@
 import { Token, TokenAmount, WETH } from "@vixelloswap/sdk";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { Link, RouteComponentProps, withRouter } from "react-router-dom";
 
 import { Text } from "rebass";

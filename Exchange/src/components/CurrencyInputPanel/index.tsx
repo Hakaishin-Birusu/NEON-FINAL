@@ -1,6 +1,6 @@
 import { Currency, Pair } from "@vixelloswap/sdk";
 import { darken } from "polished";
-import { useCallback, useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import styled, { ThemeContext } from "styled-components";
 import { ReactComponent as DropDown } from "../../assets/images/dropdown.svg";
 import { useCurrencyBalance } from "../../state/wallet/hooks";

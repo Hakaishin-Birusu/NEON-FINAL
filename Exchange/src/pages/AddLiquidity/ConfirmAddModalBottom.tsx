@@ -5,6 +5,7 @@ import CurrencyLogo from "../../components/CurrencyLogo";
 import { RowBetween, RowFixed } from "../../components/Row";
 import { Field } from "../../state/mint/actions";
 import { TYPE } from "../../theme";
+import React from "react";
 
 export function ConfirmAddModalBottom({
   noLiquidity,

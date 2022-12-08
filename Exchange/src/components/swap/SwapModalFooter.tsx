@@ -1,5 +1,5 @@
 import { Trade, TradeType } from "@vixelloswap/sdk";
-import { useContext, useMemo, useState } from "react";
+import React, { useContext, useMemo, useState } from "react";
 import { Repeat } from "react-feather";
 import { Text } from "rebass";
 import { ThemeContext } from "styled-components";

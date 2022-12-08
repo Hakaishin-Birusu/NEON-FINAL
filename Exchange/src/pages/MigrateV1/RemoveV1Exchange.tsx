@@ -10,7 +10,7 @@ import {
   TokenAmount,
   WETH,
 } from "@vixelloswap/sdk";
-import { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import ReactGA from "react-ga";
 import { Redirect, RouteComponentProps } from "react-router";
 import { ButtonConfirmed } from "../../components/Button";

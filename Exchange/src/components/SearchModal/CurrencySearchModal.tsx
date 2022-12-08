@@ -1,5 +1,5 @@
 import { Currency, Token } from "@vixelloswap/sdk";
-import {
+import React, {
   KeyboardEvent,
   useCallback,
   useContext,

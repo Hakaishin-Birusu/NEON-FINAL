@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Code, MessageCircle, PieChart } from "react-feather";
 import styled from "styled-components";
 import { ReactComponent as MenuIcon } from "../../assets/images/menu.svg";

@@ -1,5 +1,5 @@
 import { UnsupportedChainIdError, useWeb3React } from "@web3-react/core";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
 import ReactGA from "react-ga";
 import styled from "styled-components";

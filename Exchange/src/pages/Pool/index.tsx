@@ -1,5 +1,5 @@
 import { Pair } from "@vixelloswap/sdk";
-import { useContext, useMemo } from "react";
+import React, { useContext, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "styled-components";
 import { SwapPoolTabs } from "../../components/NavigationTabs";

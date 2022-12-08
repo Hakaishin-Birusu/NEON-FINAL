@@ -1,5 +1,11 @@
 import { JSBI, Token } from "@vixelloswap/sdk";
-import { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { ThemeContext } from "styled-components";
 import { LightCard } from "../../components/Card";
 import { AutoColumn } from "../../components/Column";

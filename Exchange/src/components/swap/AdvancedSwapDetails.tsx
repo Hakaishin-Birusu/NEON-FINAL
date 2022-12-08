@@ -1,5 +1,5 @@
 import { Trade, TradeType } from "@vixelloswap/sdk";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { ThemeContext } from "styled-components";
 import { Field } from "../../state/swap/actions";
 import { useUserSlippageTolerance } from "../../state/user/hooks";

@@ -1,5 +1,5 @@
 import { currencyEquals, Trade } from "@vixelloswap/sdk";
-import { useCallback, useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 import TransactionConfirmationModal, {
   ConfirmationModalContent,
   TransactionErrorContent,

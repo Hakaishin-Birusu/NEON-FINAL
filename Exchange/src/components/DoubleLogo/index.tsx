@@ -1,6 +1,7 @@
 import { Currency } from "@vixelloswap/sdk";
 import styled from "styled-components";
 import CurrencyLogo from "../CurrencyLogo";
+import React from "react";
 
 const Wrapper = styled.div<{ margin: boolean; sizeraw: number }>`
   position: relative;

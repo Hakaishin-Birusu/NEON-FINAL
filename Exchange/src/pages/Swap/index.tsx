@@ -1,5 +1,5 @@
 import { CurrencyAmount, JSBI, Trade } from "@vixelloswap/sdk";
-import { useCallback, useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import { ArrowDown } from "react-feather";
 import ReactGA from "react-ga";
 import { Text } from "rebass";

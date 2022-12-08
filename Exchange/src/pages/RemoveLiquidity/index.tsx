@@ -8,7 +8,7 @@ import {
   Percent,
   WETH,
 } from "@vixelloswap/sdk";
-import { useCallback, useContext, useMemo, useState } from "react";
+import React, { useCallback, useContext, useMemo, useState } from "react";
 import { ArrowDown, Plus } from "react-feather";
 import ReactGA from "react-ga";
 import { RouteComponentProps } from "react-router";

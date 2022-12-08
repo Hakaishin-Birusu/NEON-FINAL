@@ -6,7 +6,7 @@ import {
   JSBI,
   Token,
 } from "@vixelloswap/sdk";
-import { CSSProperties, memo, useContext, useMemo } from "react";
+import React, { CSSProperties, memo, useContext, useMemo } from "react";
 import { FixedSizeList } from "react-window";
 import { Text } from "rebass";
 import { ThemeContext } from "styled-components";

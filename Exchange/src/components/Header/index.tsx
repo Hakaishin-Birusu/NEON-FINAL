@@ -4,6 +4,8 @@ import { Text } from "rebass";
 
 import styled from "styled-components";
 
+import React from "react";
+
 import Logo from "../../assets/svg/logo.svg";
 import LogoDark from "../../assets/svg/logo_white.svg";
 import Wordmark from "../../assets/svg/wordmark.svg";

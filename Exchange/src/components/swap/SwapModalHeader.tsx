@@ -1,5 +1,5 @@
 import { Trade, TradeType } from "@vixelloswap/sdk";
-import { useContext, useMemo } from "react";
+import React, { useContext, useMemo } from "react";
 import { AlertTriangle, ArrowDown } from "react-feather";
 import { Text } from "rebass";
 import { ThemeContext } from "styled-components";

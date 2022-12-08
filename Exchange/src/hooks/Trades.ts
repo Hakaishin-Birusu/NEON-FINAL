@@ -10,7 +10,7 @@ import { useActiveWeb3React } from './index'
 
 function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency): Pair[] {
   const { chainId } = useActiveWeb3React()
-  //@ts-expect-error TODO Find wtf
+  //@ts-ignore TODO Find wtf
   const bases: Token[] = chainId ? BASES_TO_CHECK_TRADES_AGAINST[chainId] : []
 
   const [tokenA, tokenB] = chainId
@@ -32,7 +32,7 @@ function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency): Pair[] {
         .filter((tokens): tokens is [Token, Token] => Boolean(tokens[0] && tokens[1]))
         .filter(([tokenA, tokenB]) => {
           if (!chainId) return true
-          //@ts-expect-error TODO Find wtf
+          //@ts-ignore TODO Find wtf
           const customBases = CUSTOM_BASES[chainId]
           if (!customBases) return true
 

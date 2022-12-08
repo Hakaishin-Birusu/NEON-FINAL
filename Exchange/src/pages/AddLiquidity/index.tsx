@@ -7,7 +7,7 @@ import {
   TokenAmount,
   WETH,
 } from "@vixelloswap/sdk";
-import { useCallback, useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { Plus } from "react-feather";
 import ReactGA from "react-ga";
 import { RouteComponentProps } from "react-router-dom";
