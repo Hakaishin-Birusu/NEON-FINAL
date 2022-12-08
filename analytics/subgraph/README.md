@@ -55,3 +55,12 @@ This query fetches aggredated data from all uniswap pairs and tokens, to give a 
   }
 }
 ```
+
+<!-- files that require updates -->
+<!-- README.md
+package.json - create grapg account , update acc info & package name
+src/mappings/helpers.ts - update factory
+src/mappings/pricing.ts - update pair and router & token address
+subgraph.yaml - update factory
+
+check - src/mappings/core.ts "let factory = UniswapFactory.load(FACTORY_ADDRESS)" -->
