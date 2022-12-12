@@ -380,6 +380,7 @@ export default function Swap() {
               }}
               otherCurrency={currencies[Field.OUTPUT]}
               id="swap-currency-input"
+              showCommonBases={true}
             />
 
             <AutoColumn justify="space-between">
@@ -423,6 +424,7 @@ export default function Swap() {
               }
               otherCurrency={currencies[Field.INPUT]}
               id="swap-currency-output"
+              showCommonBases={true}
             />
 
             {recipient !== null && !showWrap ? (

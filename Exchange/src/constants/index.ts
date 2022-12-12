@@ -10,13 +10,6 @@ type ChainTokenList = {
   readonly [chainId in ChainId]: Token[];
 };
 
-export const T_WETH9 = new Token(
-  ChainId.NEON_DEVNET,
-  "0x530976c537f6F0685218C834792AC00D9ee19a5f",
-  18,
-  "WETH9",
-  "Wrapped ETH"
-);
 export const WNEON = new Token(
   ChainId.NEON_DEVNET,
   "0x11adC2d986E334137b9ad0a0F290771F31e9517F",
@@ -116,7 +109,6 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ],
   [ChainId.NEON_DEVNET]: [
     ...WETH_ONLY[ChainId.NEON_DEVNET],
-    T_WETH9,
     WNEON,
     USDT,
     wDAI,
@@ -173,7 +165,6 @@ export const SUGGESTED_BASES: ChainTokenList = {
   ],
   [ChainId.NEON_DEVNET]: [
     ...WETH_ONLY[ChainId.NEON_DEVNET],
-    T_WETH9,
     WNEON,
     USDT,
     wDAI,
@@ -187,7 +178,6 @@ export const SUGGESTED_BASES: ChainTokenList = {
   ],
   [ChainId.NEON_MAINNET]: [
     ...WETH_ONLY[ChainId.NEON_MAINNET],
-    T_WETH9,
     WNEON,
     USDT,
     wDAI,
@@ -219,7 +209,6 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ],
   [ChainId.NEON_DEVNET]: [
     ...WETH_ONLY[ChainId.NEON_DEVNET],
-    T_WETH9,
     WNEON,
     USDT,
     wDAI,
@@ -233,7 +222,6 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ],
   [ChainId.NEON_MAINNET]: [
     ...WETH_ONLY[ChainId.NEON_MAINNET],
-    T_WETH9,
     WNEON,
     USDT,
     wDAI,
