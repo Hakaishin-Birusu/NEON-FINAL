@@ -222,45 +222,46 @@ export default function AddLiquidity({
     }
 
     setAttemptingTxn(true);
-    await estimate(...args, value ? { value } : {})
-      .then((estimatedGasLimit) =>
-        method(...args, {
-          ...(value ? { value } : {}),
-          gasLimit: calculateGasMargin(estimatedGasLimit),
-        }).then((response) => {
+    estimate &&
+      (await estimate(...args, value ? { value } : {})
+        .then((estimatedGasLimit) =>
+          method(...args, {
+            ...(value ? { value } : {}),
+            gasLimit: calculateGasMargin(estimatedGasLimit),
+          }).then((response) => {
+            setAttemptingTxn(false);
+
+            addTransaction(response, {
+              summary:
+                "Add " +
+                parsedAmounts[Field.CURRENCY_A]?.toSignificant(3) +
+                " " +
+                currencies[Field.CURRENCY_A]?.symbol +
+                " and " +
+                parsedAmounts[Field.CURRENCY_B]?.toSignificant(3) +
+                " " +
+                currencies[Field.CURRENCY_B]?.symbol,
+            });
+
+            setTxHash(response.hash);
+
+            ReactGA.event({
+              category: "Liquidity",
+              action: "Add",
+              label: [
+                currencies[Field.CURRENCY_A]?.symbol,
+                currencies[Field.CURRENCY_B]?.symbol,
+              ].join("/"),
+            });
+          })
+        )
+        .catch((error) => {
           setAttemptingTxn(false);
-
-          addTransaction(response, {
-            summary:
-              "Add " +
-              parsedAmounts[Field.CURRENCY_A]?.toSignificant(3) +
-              " " +
-              currencies[Field.CURRENCY_A]?.symbol +
-              " and " +
-              parsedAmounts[Field.CURRENCY_B]?.toSignificant(3) +
-              " " +
-              currencies[Field.CURRENCY_B]?.symbol,
-          });
-
-          setTxHash(response.hash);
-
-          ReactGA.event({
-            category: "Liquidity",
-            action: "Add",
-            label: [
-              currencies[Field.CURRENCY_A]?.symbol,
-              currencies[Field.CURRENCY_B]?.symbol,
-            ].join("/"),
-          });
-        })
-      )
-      .catch((error) => {
-        setAttemptingTxn(false);
-        // we only care if the error is something _other_ than the user rejected the tx
-        if (error?.code !== 4001) {
-          console.error(error);
-        }
-      });
+          // we only care if the error is something _other_ than the user rejected the tx
+          if (error?.code !== 4001) {
+            console.error(error);
+          }
+        }));
   }
 
   const modalHeader = () => {
