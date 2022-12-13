@@ -2555,10 +2555,10 @@
   resolved "https://registry.yarnpkg.com/@uniswap/token-lists/-/token-lists-1.0.0-beta.11.tgz#365dd55d536c67fa550554c0658391bfbc2930b7"
   integrity sha512-dGHdb58d+rN7G164ziPP6omb1R0hwBVgs95er83OzXKkVRlLKE/FLSdgpDaTxLj1war+P/hZXw2/ToYcKFsobQ==
 
-"@vixelloswap/sdk@3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@vixelloswap/sdk/-/sdk-3.0.4.tgz#4112648fd6ae472161c3619c6607ed863f4828fe"
-  integrity sha512-Aj16EpQwl3spH0SNnjeB+6C5zOEwRURRlaJKVN0oimUpdTiZA5Z+3Lz6EwcwfdJF4DROW94HY9aMh+NF0AJrGw==
+"@vixelloswap/sdk@3.0.5":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@vixelloswap/sdk/-/sdk-3.0.5.tgz#42018f175ab07c2e1e46f5d6725fcb400e8a5e2e"
+  integrity sha512-vuTxdxDsf1/+5FzUSBMY4tpQuVlAlZ0VY9Sdtzi3vViIouuOUgjgiD7LHpZYaWNS3qGRp3zrERzr/hym/25jkg==
   dependencies:
     big.js "^5.2.2"
     decimal.js-light "^2.5.0"
