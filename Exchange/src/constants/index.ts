@@ -10,75 +10,19 @@ type ChainTokenList = {
   readonly [chainId in ChainId]: Token[];
 };
 
-export const WNEON = new Token(
-  ChainId.NEON_DEVNET,
-  "0x11adC2d986E334137b9ad0a0F290771F31e9517F",
-  18,
-  "WNEON",
-  "Wrapped NEON"
-);
 export const USDT = new Token(
   ChainId.NEON_DEVNET,
   "0xAA24A5A5E273EFAa64a960B28de6E27B87FfDFfc",
-  18,
+  6,
   "USDT",
   "USDT"
-);
-export const wDAI = new Token(
-  ChainId.NEON_DEVNET,
-  "0x4954cd6230C19e63B7c7b131760Ef0C0c424321C",
-  18,
-  "wDAI",
-  "wDAI"
 );
 export const USDC = new Token(
   ChainId.NEON_DEVNET,
   "0xC659B2633Ed725e5346396a609d8f31794d6ac50",
-  18,
+  6,
   "USDC",
   "USDC"
-);
-export const ETH = new Token(
-  ChainId.NEON_DEVNET,
-  "0x90306D9492eB658e47A64Ef834e76c81A0242598",
-  18,
-  "ETH",
-  "ETH"
-);
-export const wBTC = new Token(
-  ChainId.NEON_DEVNET,
-  "0x07A274154D79C23d5cd7ba78a243645E419CDd46",
-  18,
-  "wBTC",
-  "wBTC"
-);
-export const AAVE = new Token(
-  ChainId.NEON_DEVNET,
-  "0xAb94bD2221cAc77FEbDB0B979Eb8839Ed7dDB981",
-  18,
-  "AAVE",
-  "AAVE"
-);
-export const wCRV = new Token(
-  ChainId.NEON_DEVNET,
-  "0xcd7cD0Fe96D89aA98F1cB8f17cD31dCb6eA90D0d",
-  18,
-  "wCRV",
-  "wCRV"
-);
-export const SUSHI = new Token(
-  ChainId.NEON_DEVNET,
-  "0x74bcA1362b31d52198E102d9E5f5B9af360D6750",
-  18,
-  "SUSHI",
-  "SUSHI"
-);
-export const wBAL = new Token(
-  ChainId.NEON_DEVNET,
-  "0x4C694ac087B2D1DFcB7e868af6C0561f070B7f6C",
-  18,
-  "wBAL",
-  "wBAL"
 );
 
 const WETH_ONLY: ChainTokenList = {
@@ -94,45 +38,9 @@ const WETH_ONLY: ChainTokenList = {
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.MAINNET]: [
-    ...WETH_ONLY[ChainId.MAINNET],
-    WNEON,
-    USDT,
-    wDAI,
-    USDC,
-    ETH,
-    wBTC,
-    AAVE,
-    wCRV,
-    SUSHI,
-    wBAL,
-  ],
-  [ChainId.NEON_DEVNET]: [
-    ...WETH_ONLY[ChainId.NEON_DEVNET],
-    WNEON,
-    USDT,
-    wDAI,
-    USDC,
-    ETH,
-    wBTC,
-    AAVE,
-    wCRV,
-    SUSHI,
-    wBAL,
-  ],
-  [ChainId.NEON_MAINNET]: [
-    ...WETH_ONLY[ChainId.NEON_MAINNET],
-    WNEON,
-    USDT,
-    wDAI,
-    USDC,
-    ETH,
-    wBTC,
-    AAVE,
-    wCRV,
-    SUSHI,
-    wBAL,
-  ],
+  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], USDT, USDC],
+  [ChainId.NEON_DEVNET]: [...WETH_ONLY[ChainId.NEON_DEVNET], USDT, USDC],
+  [ChainId.NEON_MAINNET]: [...WETH_ONLY[ChainId.NEON_MAINNET], USDT, USDC],
 };
 
 /**
@@ -150,89 +58,17 @@ export const CUSTOM_BASES: {
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.MAINNET]: [
-    ...WETH_ONLY[ChainId.MAINNET],
-    WNEON,
-    USDT,
-    wDAI,
-    USDC,
-    ETH,
-    wBTC,
-    AAVE,
-    wCRV,
-    SUSHI,
-    wBAL,
-  ],
-  [ChainId.NEON_DEVNET]: [
-    ...WETH_ONLY[ChainId.NEON_DEVNET],
-    WNEON,
-    USDT,
-    wDAI,
-    USDC,
-    ETH,
-    wBTC,
-    AAVE,
-    wCRV,
-    SUSHI,
-    wBAL,
-  ],
-  [ChainId.NEON_MAINNET]: [
-    ...WETH_ONLY[ChainId.NEON_MAINNET],
-    WNEON,
-    USDT,
-    wDAI,
-    USDC,
-    ETH,
-    wBTC,
-    AAVE,
-    wCRV,
-    SUSHI,
-    wBAL,
-  ],
+  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], USDT, USDC],
+  [ChainId.NEON_DEVNET]: [...WETH_ONLY[ChainId.NEON_DEVNET], USDT, USDC],
+  [ChainId.NEON_MAINNET]: [...WETH_ONLY[ChainId.NEON_MAINNET], USDT, USDC],
 };
 
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.MAINNET]: [
-    ...WETH_ONLY[ChainId.MAINNET],
-    WNEON,
-    USDT,
-    wDAI,
-    USDC,
-    ETH,
-    wBTC,
-    AAVE,
-    wCRV,
-    SUSHI,
-    wBAL,
-  ],
-  [ChainId.NEON_DEVNET]: [
-    ...WETH_ONLY[ChainId.NEON_DEVNET],
-    WNEON,
-    USDT,
-    wDAI,
-    USDC,
-    ETH,
-    wBTC,
-    AAVE,
-    wCRV,
-    SUSHI,
-    wBAL,
-  ],
-  [ChainId.NEON_MAINNET]: [
-    ...WETH_ONLY[ChainId.NEON_MAINNET],
-    WNEON,
-    USDT,
-    wDAI,
-    USDC,
-    ETH,
-    wBTC,
-    AAVE,
-    wCRV,
-    SUSHI,
-    wBAL,
-  ],
+  [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], USDT, USDC],
+  [ChainId.NEON_DEVNET]: [...WETH_ONLY[ChainId.NEON_DEVNET], USDT, USDC],
+  [ChainId.NEON_MAINNET]: [...WETH_ONLY[ChainId.NEON_MAINNET], USDT, USDC],
 };
 
 export const PINNED_PAIRS: {
