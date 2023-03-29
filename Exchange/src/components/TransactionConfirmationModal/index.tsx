@@ -1,4 +1,4 @@
-import { ChainId } from "@vixelloswap/sdk";
+import { ChainId } from "@zksyncswap/sdk";
 import React, { useContext } from "react";
 import { AlertTriangle, ArrowUpCircle } from "react-feather";
 import { Text } from "rebass";
@@ -102,7 +102,7 @@ function TransactionSubmittedContent({
             href={getEtherscanLink(chainId, hash ?? "", "transaction")}
           >
             <Text fontWeight={500} fontSize={14} color={theme.primary1}>
-              View on Neon Explorer
+              View on Zksync Explorer
             </Text>
           </ExternalLink>
           <ButtonPrimary onClick={onDismiss} style={{ margin: "20px 0 0 0" }}>

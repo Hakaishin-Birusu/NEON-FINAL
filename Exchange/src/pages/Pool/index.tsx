@@ -1,4 +1,4 @@
-import { Pair } from "@vixelloswap/sdk";
+import { Pair } from "@zksyncswap/sdk";
 import React, { useContext, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "styled-components";
@@ -20,7 +20,7 @@ import { usePairs } from "../../data/Reserves";
 import { useActiveWeb3React } from "../../hooks";
 import {
   toV2LiquidityToken,
-  useTrackedTokenPairs,
+  useTrackedTokenPairs
 } from "../../state/user/hooks";
 import AppBody from "../AppBody";
 
@@ -82,7 +82,7 @@ export default function Pool() {
             id="join-pool-button"
             as={Link}
             style={{ padding: 16 }}
-            to="/add/NEON"
+            to="/add/ETH"
           >
             <Text fontWeight={500} fontSize={20}>
               Add Liquidity

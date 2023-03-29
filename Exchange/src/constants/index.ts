@@ -1,5 +1,6 @@
-import { ChainId, JSBI, Percent, Token, WETH } from "@vixelloswap/sdk";
 import { AbstractConnector } from "@web3-react/abstract-connector";
+import { ChainId, JSBI, Percent, Token, WETH } from "@zksyncswap/sdk";
+//TODO Change THIS
 
 import { injected, walletconnect, walletlink } from "../connectors";
 
@@ -11,14 +12,14 @@ type ChainTokenList = {
 };
 
 export const USDT = new Token(
-  ChainId.NEON_DEVNET,
+  ChainId.ZKSYNC_MAINNET,
   "0xAA24A5A5E273EFAa64a960B28de6E27B87FfDFfc",
   6,
   "USDT",
   "USDT"
 );
 export const USDC = new Token(
-  ChainId.NEON_DEVNET,
+  ChainId.ZKSYNC_MAINNET,
   "0xC659B2633Ed725e5346396a609d8f31794d6ac50",
   6,
   "USDC",
@@ -31,16 +32,14 @@ const WETH_ONLY: ChainTokenList = {
   [ChainId.RINKEBY]: [WETH[ChainId.RINKEBY]],
   [ChainId.GÖRLI]: [WETH[ChainId.GÖRLI]],
   [ChainId.KOVAN]: [WETH[ChainId.KOVAN]],
-  [ChainId.NEON_DEVNET]: [WETH[ChainId.NEON_DEVNET]],
-  [ChainId.NEON_MAINNET]: [WETH[ChainId.NEON_MAINNET]],
+  [ChainId.ZKSYNC_MAINNET]: [WETH[ChainId.ZKSYNC_MAINNET]],
 };
 
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ...WETH_ONLY,
   [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], USDT, USDC],
-  [ChainId.NEON_DEVNET]: [...WETH_ONLY[ChainId.NEON_DEVNET], USDT, USDC],
-  [ChainId.NEON_MAINNET]: [...WETH_ONLY[ChainId.NEON_MAINNET], USDT, USDC],
+  [ChainId.ZKSYNC_MAINNET]: [...WETH_ONLY[ChainId.ZKSYNC_MAINNET], USDT, USDC],
 };
 
 /**
@@ -59,16 +58,14 @@ export const CUSTOM_BASES: {
 export const SUGGESTED_BASES: ChainTokenList = {
   ...WETH_ONLY,
   [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], USDT, USDC],
-  [ChainId.NEON_DEVNET]: [...WETH_ONLY[ChainId.NEON_DEVNET], USDT, USDC],
-  [ChainId.NEON_MAINNET]: [...WETH_ONLY[ChainId.NEON_MAINNET], USDT, USDC],
+  [ChainId.ZKSYNC_MAINNET]: [...WETH_ONLY[ChainId.ZKSYNC_MAINNET], USDT, USDC],
 };
 
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ...WETH_ONLY,
   [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET], USDT, USDC],
-  [ChainId.NEON_DEVNET]: [...WETH_ONLY[ChainId.NEON_DEVNET], USDT, USDC],
-  [ChainId.NEON_MAINNET]: [...WETH_ONLY[ChainId.NEON_MAINNET], USDT, USDC],
+  [ChainId.ZKSYNC_MAINNET]: [...WETH_ONLY[ChainId.ZKSYNC_MAINNET], USDT, USDC],
 };
 
 export const PINNED_PAIRS: {
@@ -200,4 +197,4 @@ export const BETTER_TRADE_LINK_THRESHOLD = new Percent(
 
 // the Uniswap Default token list lives here
 export const DEFAULT_TOKEN_LIST_URL =
-  "https://unpkg.com/@vixelloswap/default-token-list@latest";
+  "https://unpkg.com/@zksyncswap/default-token-list@latest";

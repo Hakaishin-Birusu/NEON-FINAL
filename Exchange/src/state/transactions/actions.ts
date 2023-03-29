@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit'
-import { ChainId } from '@vixelloswap/sdk'
+import { ChainId } from '@zksyncswap/sdk'
 
 export interface SerializableTransactionReceipt {
   to: string

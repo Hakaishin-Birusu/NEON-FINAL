@@ -1,4 +1,4 @@
-import { Trade, TradeType } from "@vixelloswap/sdk";
+import { Trade, TradeType } from "@zksyncswap/sdk";
 import React, { useContext, useMemo } from "react";
 import { AlertTriangle, ArrowDown } from "react-feather";
 import { Text } from "rebass";
@@ -9,7 +9,7 @@ import { isAddress, shortenAddress } from "../../utils";
 import {
   computeSlippageAdjustedAmounts,
   computeTradePriceBreakdown,
-  warningSeverity,
+  warningSeverity
 } from "../../utils/prices";
 import { ButtonPrimary } from "../Button";
 import { AutoColumn } from "../Column";

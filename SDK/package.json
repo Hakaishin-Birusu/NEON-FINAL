@@ -1,14 +1,14 @@
 {
-  "name": "@vixelloswap/sdk",
+  "name": "@zksyncswap/sdk",
   "license": "MIT",
   "version": "3.0.4",
-  "description": "🛠 An SDK for building applications on top of Uniswap for Neon.",
+  "description": "🛠 An SDK for building applications on top of Uniswap for Zksync.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/jacob-abe/vixelloswap-sdk.git",
+  "repository": "https://github.com/jacob-abe/zksyncswap-sdk.git",
   "keywords": [
     "uniswap",
     "ethereum"

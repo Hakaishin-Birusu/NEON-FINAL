@@ -112,7 +112,7 @@ export default function AddressInputPanel({
                   href={getEtherscanLink(chainId, name ?? address, "address")}
                   style={{ fontSize: "14px" }}
                 >
-                  (View on Neon Explorer)
+                  (View on Zksync Explorer)
                 </ExternalLink>
               )}
             </RowBetween>

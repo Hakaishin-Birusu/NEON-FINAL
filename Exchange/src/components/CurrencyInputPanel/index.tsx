@@ -1,4 +1,4 @@
-import { Currency, Pair } from "@vixelloswap/sdk";
+import { Currency, Pair } from "@zksyncswap/sdk";
 import { darken } from "polished";
 import React, { useCallback, useContext, useState } from "react";
 import styled, { ThemeContext } from "styled-components";

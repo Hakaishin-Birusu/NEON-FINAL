@@ -1,4 +1,4 @@
-import { Currency, Token } from "@vixelloswap/sdk";
+import { Currency, Token } from "@zksyncswap/sdk";
 import React, {
   KeyboardEvent,
   useCallback,
@@ -6,7 +6,7 @@ import React, {
   useEffect,
   useMemo,
   useRef,
-  useState,
+  useState
 } from "react";
 import { isMobile } from "react-device-detect";
 import { useTranslation } from "react-i18next";

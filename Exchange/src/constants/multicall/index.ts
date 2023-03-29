@@ -1,4 +1,4 @@
-import { ChainId } from "@vixelloswap/sdk";
+import { ChainId } from "@zksyncswap/sdk";
 import MULTICALL_ABI from "./abi.json";
 
 const MULTICALL_NETWORKS: { [chainId in ChainId]: string } = {
@@ -7,8 +7,8 @@ const MULTICALL_NETWORKS: { [chainId in ChainId]: string } = {
   [ChainId.KOVAN]: "0x2cc8688C5f75E365aaEEb4ea8D6a480405A48D2A",
   [ChainId.RINKEBY]: "0x42Ad527de7d4e9d9d011aC45B31D8551f8Fe9821",
   [ChainId.GÖRLI]: "0x77dCa2C955b15e9dE4dbBCf1246B4B85b651e50e",
-  [ChainId.NEON_DEVNET]: "0x4749a479b0B12A511F08b4778f127a5eCE68B751",
-  [ChainId.NEON_MAINNET]: "0x4749a479b0B12A511F08b4778f127a5eCE68B751", // tODO CHANGE
+  [ChainId.ZKSYNC_MAINNET]: "0x4749a479b0B12A511F08b4778f127a5eCE68B751",// tODO CHANGE this
 };
 
 export { MULTICALL_ABI, MULTICALL_NETWORKS };
+

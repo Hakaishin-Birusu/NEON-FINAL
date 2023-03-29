@@ -1,5 +1,5 @@
 import { Interface } from '@ethersproject/abi'
-import { Currency, Pair, TokenAmount } from '@vixelloswap/sdk'
+import { Currency, Pair, TokenAmount } from '@zksyncswap/sdk'
 import { useMemo } from 'react'
 import { abi as IUniswapV2PairABI } from '../abis/IVixelloswapPair.json'
 import { useActiveWeb3React } from '../hooks'

@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Pair, Token, Trade } from '@vixelloswap/sdk'
+import { Currency, CurrencyAmount, Pair, Token, Trade } from '@zksyncswap/sdk'
 import flatMap from 'lodash.flatmap'
 import { useMemo } from 'react'
 

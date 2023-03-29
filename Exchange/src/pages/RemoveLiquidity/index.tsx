@@ -6,8 +6,8 @@ import {
   currencyEquals,
   ETHER,
   Percent,
-  WETH,
-} from "@vixelloswap/sdk";
+  WETH
+} from "@zksyncswap/sdk";
 import React, { useCallback, useContext, useMemo, useState } from "react";
 import { ArrowDown, Plus } from "react-feather";
 import ReactGA from "react-ga";
@@ -18,7 +18,7 @@ import {
   ButtonConfirmed,
   ButtonError,
   ButtonLight,
-  ButtonPrimary,
+  ButtonPrimary
 } from "../../components/Button";
 import { LightCard } from "../../components/Card";
 import { AutoColumn, ColumnCenter } from "../../components/Column";
@@ -28,7 +28,7 @@ import { AddRemoveTabs } from "../../components/NavigationTabs";
 import { MinimalPositionCard } from "../../components/PositionCard";
 import Row, { RowBetween, RowFixed } from "../../components/Row";
 import TransactionConfirmationModal, {
-  ConfirmationModalContent,
+  ConfirmationModalContent
 } from "../../components/TransactionConfirmationModal";
 
 import CurrencyLogo from "../../components/CurrencyLogo";
@@ -42,25 +42,25 @@ import { BigNumber } from "@ethersproject/bignumber";
 import { Dots } from "../../components/swap/styleds";
 import {
   ApprovalState,
-  useApproveCallback,
+  useApproveCallback
 } from "../../hooks/useApproveCallback";
 import { useWalletModalToggle } from "../../state/application/hooks";
 import { Field } from "../../state/burn/actions";
 import {
   useBurnActionHandlers,
   useBurnState,
-  useDerivedBurnInfo,
+  useDerivedBurnInfo
 } from "../../state/burn/hooks";
 import { useTransactionAdder } from "../../state/transactions/hooks";
 import {
   useUserDeadline,
-  useUserSlippageTolerance,
+  useUserSlippageTolerance
 } from "../../state/user/hooks";
 import { StyledInternalLink, TYPE } from "../../theme";
 import {
   calculateGasMargin,
   calculateSlippageAmount,
-  getRouterContract,
+  getRouterContract
 } from "../../utils";
 import { currencyId } from "../../utils/currencyId";
 import { wrappedCurrency } from "../../utils/wrappedCurrency";
@@ -713,16 +713,16 @@ export default function RemoveLiquidity({
                             to={`/remove/${
                               currencyA &&
                               currencyEquals(currencyA, WETH[chainId])
-                                ? "NEON"
+                                ? "ETH"
                                 : currencyIdA
                             }/${
                               currencyB &&
                               currencyEquals(currencyB, WETH[chainId])
-                                ? "NEON"
+                                ? "ETH"
                                 : currencyIdB
                             }`}
                           >
-                            Receive NEON
+                            Receive ETH
                           </StyledInternalLink>
                         ) : null}
                       </RowBetween>

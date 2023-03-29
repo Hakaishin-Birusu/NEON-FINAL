@@ -6,13 +6,13 @@ import {
   Router,
   SwapParameters,
   Trade,
-  TradeType,
-} from "@vixelloswap/sdk";
+  TradeType
+} from "@zksyncswap/sdk";
 import { useMemo } from "react";
 import {
   BIPS_BASE,
   DEFAULT_DEADLINE_FROM_NOW,
-  INITIAL_ALLOWED_SLIPPAGE,
+  INITIAL_ALLOWED_SLIPPAGE
 } from "../constants";
 import { getTradeVersion, useV1TradeExchangeAddress } from "../data/V1";
 import { useTransactionAdder } from "../state/transactions/hooks";
@@ -20,7 +20,7 @@ import {
   calculateGasMargin,
   getRouterContract,
   isAddress,
-  shortenAddress,
+  shortenAddress
 } from "../utils";
 import isZero from "../utils/isZero";
 import v1SwapArguments from "../utils/v1SwapArguments";

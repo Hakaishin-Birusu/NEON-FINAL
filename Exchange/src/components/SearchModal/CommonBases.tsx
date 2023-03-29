@@ -3,11 +3,11 @@ import {
   Currency,
   currencyEquals,
   ETHER,
-  Token,
-} from "@vixelloswap/sdk";
+  Token
+} from "@zksyncswap/sdk";
+import React from "react";
 import { Text } from "rebass";
 import styled from "styled-components";
-import React from "react";
 
 import { SUGGESTED_BASES } from "../../constants";
 import { AutoColumn } from "../Column";
@@ -58,7 +58,7 @@ export default function CommonBases({
         >
           <CurrencyLogo currency={ETHER} style={{ marginRight: 8 }} />
           <Text fontWeight={500} fontSize={16}>
-            NEON
+            ETH
           </Text>
         </BaseWrapper>
         {(chainId ? SUGGESTED_BASES[chainId] : []).map((token: Token) => {

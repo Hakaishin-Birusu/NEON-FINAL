@@ -1,6 +1,6 @@
 import { MaxUint256 } from '@ethersproject/constants'
 import { TransactionResponse } from '@ethersproject/providers'
-import { CurrencyAmount, ETHER, TokenAmount, Trade } from '@vixelloswap/sdk'
+import { CurrencyAmount, ETHER, TokenAmount, Trade } from '@zksyncswap/sdk'
 import { useCallback, useMemo } from 'react'
 import { ROUTER_ADDRESS } from '../constants'
 import { useTokenAllowance } from '../data/Allowances'

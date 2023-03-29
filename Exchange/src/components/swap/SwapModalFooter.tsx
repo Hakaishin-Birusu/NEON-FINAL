@@ -1,4 +1,4 @@
-import { Trade, TradeType } from "@vixelloswap/sdk";
+import { Trade, TradeType } from "@zksyncswap/sdk";
 import React, { useContext, useMemo, useState } from "react";
 import { Repeat } from "react-feather";
 import { Text } from "rebass";
@@ -9,7 +9,7 @@ import {
   computeSlippageAdjustedAmounts,
   computeTradePriceBreakdown,
   formatExecutionPrice,
-  warningSeverity,
+  warningSeverity
 } from "../../utils/prices";
 import { ButtonError } from "../Button";
 import { AutoColumn } from "../Column";

@@ -10,8 +10,8 @@ import {
   ETHER,
   JSBI,
   Percent,
-  Token,
-} from "@vixelloswap/sdk";
+  Token
+} from "@zksyncswap/sdk";
 import { abi as IUniswapV2Router02ABI } from "../abis/IVixelloV2Router02.json";
 import { ROUTER_ADDRESS } from "../constants";
 import { TokenAddressMap } from "../state/lists/hooks";
@@ -31,8 +31,7 @@ const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
   4: "rinkeby.etherscan.io",
   5: "goerli.etherscan.io",
   42: "kovan.etherscan.io",
-  245022926: "neonscan.org",
-  245022934: "neonscan.org",
+  324: "https://explorer.zksync.io",
 };
 
 export function getEtherscanLink(

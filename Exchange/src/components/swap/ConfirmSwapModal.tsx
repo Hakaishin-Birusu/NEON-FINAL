@@ -1,8 +1,8 @@
-import { currencyEquals, Trade } from "@vixelloswap/sdk";
+import { currencyEquals, Trade } from "@zksyncswap/sdk";
 import React, { useCallback, useMemo } from "react";
 import TransactionConfirmationModal, {
   ConfirmationModalContent,
-  TransactionErrorContent,
+  TransactionErrorContent
 } from "../TransactionConfirmationModal";
 import SwapModalFooter from "./SwapModalFooter";
 import SwapModalHeader from "./SwapModalHeader";

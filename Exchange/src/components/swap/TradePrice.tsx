@@ -1,4 +1,4 @@
-import { Currency, Price } from "@vixelloswap/sdk";
+import { Currency, Price } from "@zksyncswap/sdk";
 import React, { useContext } from "react";
 import { Repeat } from "react-feather";
 import { Text } from "rebass";

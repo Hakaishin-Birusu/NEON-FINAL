@@ -20,7 +20,7 @@ import {
   injected,
   portis,
   walletconnect,
-  walletlink,
+  walletlink
 } from "../../connectors";
 import { SUPPORTED_WALLETS } from "../../constants";
 import { ExternalLink, LinkStyledButton, TYPE } from "../../theme";
@@ -374,7 +374,7 @@ export default function AccountDetails({
                         >
                           <LinkIcon size={16} />
                           <span style={{ marginLeft: "4px" }}>
-                            View on Neon explorer
+                            View on Zksync explorer
                           </span>
                         </AddressLink>
                       </div>

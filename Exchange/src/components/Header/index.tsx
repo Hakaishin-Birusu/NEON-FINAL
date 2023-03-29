@@ -1,4 +1,4 @@
-import { ChainId } from "@vixelloswap/sdk";
+import { ChainId } from "@zksyncswap/sdk";
 import { isMobile } from "react-device-detect";
 import { Text } from "rebass";
 
@@ -132,8 +132,7 @@ const NETWORK_LABELS: { [chainId in ChainId]: string | null } = {
   [ChainId.ROPSTEN]: "Ropsten",
   [ChainId.GÖRLI]: "Görli",
   [ChainId.KOVAN]: "Kovan",
-  [ChainId.NEON_DEVNET]: "Devnet",
-  [ChainId.NEON_MAINNET]: "Mainnet",
+  [ChainId.ZKSYNC_MAINNET]: "Zksync Mainnet",
 };
 
 export default function Header() {
@@ -180,7 +179,7 @@ export default function Header() {
                   pr="0.5rem"
                   fontWeight={500}
                 >
-                  {userEthBalance?.toSignificant(4)} NEON
+                  {userEthBalance?.toSignificant(4)} ETH
                 </BalanceText>
               ) : null}
               <Web3Status />

@@ -5,8 +5,8 @@ import {
   currencyEquals,
   ETHER,
   TokenAmount,
-  WETH,
-} from "@vixelloswap/sdk";
+  WETH
+} from "@zksyncswap/sdk";
 import React, { useCallback, useContext, useState } from "react";
 import { Plus } from "react-feather";
 import ReactGA from "react-ga";
@@ -16,7 +16,7 @@ import { ThemeContext } from "styled-components";
 import {
   ButtonError,
   ButtonLight,
-  ButtonPrimary,
+  ButtonPrimary
 } from "../../components/Button";
 import { BlueCard, GreyCard, LightCard } from "../../components/Card";
 import { AutoColumn, ColumnCenter } from "../../components/Column";
@@ -26,7 +26,7 @@ import { AddRemoveTabs } from "../../components/NavigationTabs";
 import { MinimalPositionCard } from "../../components/PositionCard";
 import Row, { RowBetween, RowFlat } from "../../components/Row";
 import TransactionConfirmationModal, {
-  ConfirmationModalContent,
+  ConfirmationModalContent
 } from "../../components/TransactionConfirmationModal";
 
 import { ROUTER_ADDRESS } from "../../constants";
@@ -35,27 +35,27 @@ import { useActiveWeb3React } from "../../hooks";
 import { useCurrency } from "../../hooks/Tokens";
 import {
   ApprovalState,
-  useApproveCallback,
+  useApproveCallback
 } from "../../hooks/useApproveCallback";
 import { useWalletModalToggle } from "../../state/application/hooks";
 import { Field } from "../../state/mint/actions";
 import {
   useDerivedMintInfo,
   useMintActionHandlers,
-  useMintState,
+  useMintState
 } from "../../state/mint/hooks";
 
 import { useTransactionAdder } from "../../state/transactions/hooks";
 import {
   useIsExpertMode,
   useUserDeadline,
-  useUserSlippageTolerance,
+  useUserSlippageTolerance
 } from "../../state/user/hooks";
 import { TYPE } from "../../theme";
 import {
   calculateGasMargin,
   calculateSlippageAmount,
-  getRouterContract,
+  getRouterContract
 } from "../../utils";
 import { currencyId } from "../../utils/currencyId";
 import { maxAmountSpend } from "../../utils/maxAmountSpend";
@@ -363,7 +363,7 @@ export default function AddLiquidity({
         }
       } else {
         history.push(
-          `/add/${currencyIdA ? currencyIdA : "NEON"}/${newCurrencyIdB}`
+          `/add/${currencyIdA ? currencyIdA : "ETH"}/${newCurrencyIdB}`
         );
       }
     },

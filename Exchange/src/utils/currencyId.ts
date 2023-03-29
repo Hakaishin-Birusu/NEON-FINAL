@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from '@vixelloswap/sdk'
+import { Currency, ETHER, Token } from '@zksyncswap/sdk'
 
 export function currencyId(currency: Currency): string {
   if (currency === ETHER) return 'ETH'

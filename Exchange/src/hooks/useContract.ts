@@ -1,5 +1,5 @@
 import { Contract } from '@ethersproject/contracts'
-import { ChainId, WETH } from '@vixelloswap/sdk'
+import { ChainId, WETH } from '@zksyncswap/sdk'
 import { useMemo } from 'react'
 import { abi as IUniswapV2PairABI } from '../abis/IVixelloswapPair.json'
 import { ERC20_BYTES32_ABI } from '../constants/abis/erc20'

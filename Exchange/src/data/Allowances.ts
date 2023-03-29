@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from '@vixelloswap/sdk'
+import { Token, TokenAmount } from '@zksyncswap/sdk'
 import { useMemo } from 'react'
 
 import { useTokenContract } from '../hooks/useContract'

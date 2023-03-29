@@ -1,5 +1,5 @@
 import { TokenInfo, TokenList } from '@uniswap/token-lists'
-import { ChainId, Token } from '@vixelloswap/sdk'
+import { ChainId, Token } from '@zksyncswap/sdk'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { DEFAULT_TOKEN_LIST_URL } from '../../constants'
@@ -25,8 +25,7 @@ export type TokenAddressMap = Readonly<{ [chainId in ChainId]: Readonly<{ [token
  * An empty result, useful as a default.
  */
 const EMPTY_LIST: TokenAddressMap = {
-  [ChainId.NEON_DEVNET]: {},
-  [ChainId.NEON_MAINNET]: {},
+  [ChainId.ZKSYNC_MAINNET]: {},
   [ChainId.KOVAN]: {},
   [ChainId.RINKEBY]: {},
   [ChainId.ROPSTEN]: {},

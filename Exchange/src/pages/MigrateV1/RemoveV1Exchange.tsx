@@ -8,8 +8,8 @@ import {
   Percent,
   Token,
   TokenAmount,
-  WETH,
-} from "@vixelloswap/sdk";
+  WETH
+} from "@zksyncswap/sdk";
 import React, { useCallback, useMemo, useState } from "react";
 import ReactGA from "react-ga";
 import { Redirect, RouteComponentProps } from "react-router";
@@ -27,7 +27,7 @@ import { useV1ExchangeContract } from "../../hooks/useContract";
 import { NEVER_RELOAD, useSingleCallResult } from "../../state/multicall/hooks";
 import {
   useIsTransactionPending,
-  useTransactionAdder,
+  useTransactionAdder
 } from "../../state/transactions/hooks";
 import { useETHBalances, useTokenBalance } from "../../state/wallet/hooks";
 import { BackArrow, TYPE } from "../../theme";
@@ -106,7 +106,7 @@ function V1PairRemoval({
         addTransaction(response, {
           summary: `Remove ${
             token.equals(WETH[chainId]) ? "WETH" : token.symbol
-          }/NEON V1 liquidity`,
+          }/ETH V1 liquidity`,
         });
         setPendingRemovalHash(response.hash);
       })

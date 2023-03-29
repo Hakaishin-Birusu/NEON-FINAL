@@ -1,4 +1,4 @@
-import { Trade, TradeType } from "@vixelloswap/sdk";
+import { Trade, TradeType } from "@zksyncswap/sdk";
 import React, { useContext } from "react";
 import { ThemeContext } from "styled-components";
 import { Field } from "../../state/swap/actions";
@@ -6,7 +6,7 @@ import { useUserSlippageTolerance } from "../../state/user/hooks";
 import { TYPE } from "../../theme";
 import {
   computeSlippageAdjustedAmounts,
-  computeTradePriceBreakdown,
+  computeTradePriceBreakdown
 } from "../../utils/prices";
 import { AutoColumn } from "../Column";
 import QuestionHelper from "../QuestionHelper";

@@ -1,20 +1,20 @@
-import { Currency, Token } from "@vixelloswap/sdk";
+import { Currency, Token } from "@zksyncswap/sdk";
 import { transparentize } from "polished";
 import React, { useMemo } from "react";
+import { AlertTriangle } from "react-feather";
 import styled from "styled-components";
 import { useActiveWeb3React } from "../../hooks";
 import { useAllTokens } from "../../hooks/Tokens";
 import { useDefaultTokenList } from "../../state/lists/hooks";
 import { Field } from "../../state/swap/actions";
+import { useTokenWarningDismissal } from "../../state/user/hooks";
 import { ExternalLink, TYPE } from "../../theme";
 import { getEtherscanLink, isDefaultToken } from "../../utils";
 import PropsOfExcluding from "../../utils/props-of-excluding";
+import { ButtonError } from "../Button";
+import { AutoColumn } from "../Column";
 import CurrencyLogo from "../CurrencyLogo";
 import { AutoRow, RowBetween } from "../Row";
-import { AutoColumn } from "../Column";
-import { AlertTriangle } from "react-feather";
-import { ButtonError } from "../Button";
-import { useTokenWarningDismissal } from "../../state/user/hooks";
 
 const Wrapper = styled.div<{ error: boolean }>`
   background: ${({ theme }) => transparentize(0.6, theme.white)};
@@ -89,7 +89,7 @@ export default function TokenWarningCard({
             style={{ fontWeight: 400 }}
             href={getEtherscanLink(chainId, token.address, "token")}
           >
-            <TYPE.blue> (View on Neon Scan)</TYPE.blue>
+            <TYPE.blue> (View on Zksync Scan)</TYPE.blue>
           </ExternalLink>
         </AutoColumn>
       </AutoRow>
@@ -120,7 +120,7 @@ export function TokenWarningCards({
           <TYPE.main color={"red2"}>Token imported</TYPE.main>
         </AutoRow>
         <TYPE.body color={"red2"}>
-          Anyone can create and name any ERC20 token on Neon, including creating
+          Anyone can create and name any ERC20 token on Zksync, including creating
           fake versions of existing tokens and tokens that claim to represent
           projects that do not have a token.
         </TYPE.body>

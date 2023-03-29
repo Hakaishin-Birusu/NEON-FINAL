@@ -1,10 +1,10 @@
-import { JSBI, Token } from "@vixelloswap/sdk";
+import { JSBI, Token } from "@zksyncswap/sdk";
 import React, {
   useCallback,
   useContext,
   useEffect,
   useMemo,
-  useState,
+  useState
 } from "react";
 import { ThemeContext } from "styled-components";
 import { LightCard } from "../../components/Card";

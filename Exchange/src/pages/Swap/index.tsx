@@ -1,4 +1,4 @@
-import { CurrencyAmount, JSBI, Trade } from "@vixelloswap/sdk";
+import { CurrencyAmount, JSBI, Trade } from "@zksyncswap/sdk";
 import React, { useCallback, useContext, useEffect, useState } from "react";
 import { ArrowDown } from "react-feather";
 import ReactGA from "react-ga";
@@ -8,7 +8,7 @@ import AddressInputPanel from "../../components/AddressInputPanel";
 import {
   ButtonError,
   ButtonLight,
-  ButtonPrimary,
+  ButtonPrimary
 } from "../../components/Button";
 import Card, { GreyCard } from "../../components/Card";
 import { AutoColumn } from "../../components/Column";
@@ -24,20 +24,20 @@ import {
   BottomGrouping,
   Dots,
   SwapCallbackError,
-  Wrapper,
+  Wrapper
 } from "../../components/swap/styleds";
 import TradePrice from "../../components/swap/TradePrice";
 import { TokenWarningCards } from "../../components/TokenWarningCard";
 
 import {
   BETTER_TRADE_LINK_THRESHOLD,
-  INITIAL_ALLOWED_SLIPPAGE,
+  INITIAL_ALLOWED_SLIPPAGE
 } from "../../constants";
 import { getTradeVersion, isTradeBetter } from "../../data/V1";
 import { useActiveWeb3React } from "../../hooks";
 import {
   ApprovalState,
-  useApproveCallbackFromTrade,
+  useApproveCallbackFromTrade
 } from "../../hooks/useApproveCallback";
 import useENSAddress from "../../hooks/useENSAddress";
 import { useSwapCallback } from "../../hooks/useSwapCallback";
@@ -45,26 +45,26 @@ import useToggledVersion, { Version } from "../../hooks/useToggledVersion";
 import useWrapCallback, { WrapType } from "../../hooks/useWrapCallback";
 import {
   useToggleSettingsMenu,
-  useWalletModalToggle,
+  useWalletModalToggle
 } from "../../state/application/hooks";
 import { Field } from "../../state/swap/actions";
 import {
   useDefaultsFromURLSearch,
   useDerivedSwapInfo,
   useSwapActionHandlers,
-  useSwapState,
+  useSwapState
 } from "../../state/swap/hooks";
 import {
   useExpertModeManager,
   useTokenWarningDismissal,
   useUserDeadline,
-  useUserSlippageTolerance,
+  useUserSlippageTolerance
 } from "../../state/user/hooks";
 import { LinkStyledButton, TYPE } from "../../theme";
 import { maxAmountSpend } from "../../utils/maxAmountSpend";
 import {
   computeTradePriceBreakdown,
-  warningSeverity,
+  warningSeverity
 } from "../../utils/prices";
 import AppBody from "../AppBody";
 import { ClickableText } from "../Pool/styleds";

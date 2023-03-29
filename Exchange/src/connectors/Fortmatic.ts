@@ -1,17 +1,16 @@
-import { ChainId } from '@vixelloswap/sdk'
 import { FortmaticConnector as FortmaticConnectorCore } from '@web3-react/fortmatic-connector'
+import { ChainId } from '@zksyncswap/sdk'
 
 export const OVERLAY_READY = 'OVERLAY_READY'
 
-type FormaticSupportedChains = Extract<ChainId, ChainId.MAINNET | ChainId.ROPSTEN | ChainId.RINKEBY | ChainId.KOVAN | ChainId.NEON_DEVNET | ChainId.NEON_MAINNET>
+type FormaticSupportedChains = Extract<ChainId, ChainId.MAINNET | ChainId.ROPSTEN | ChainId.RINKEBY | ChainId.KOVAN | ChainId.ZKSYNC_MAINNET>
 
 const CHAIN_ID_NETWORK_ARGUMENT: { readonly [chainId in FormaticSupportedChains]: string | undefined } = {
   [ChainId.MAINNET]: undefined,
   [ChainId.ROPSTEN]: 'ropsten',
   [ChainId.RINKEBY]: 'rinkeby',
   [ChainId.KOVAN]: 'kovan',
-  [ChainId.NEON_DEVNET]: 'devnet',
-  [ChainId.NEON_MAINNET]: 'mainnet'
+  [ChainId.ZKSYNC_MAINNET]: 'Zksync Mainnet',
 }
 
 export class FortmaticConnector extends FortmaticConnectorCore {

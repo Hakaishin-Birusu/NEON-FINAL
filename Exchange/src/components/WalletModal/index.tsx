@@ -6,7 +6,7 @@ import styled from "styled-components";
 import usePrevious from "../../hooks/usePrevious";
 import {
   useWalletModalOpen,
-  useWalletModalToggle,
+  useWalletModalToggle
 } from "../../state/application/hooks";
 
 import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
@@ -373,7 +373,7 @@ export default function WalletModal({
           )}
           {walletView !== WALLET_VIEWS.PENDING && (
             <Blurb>
-              <span>New to Neon? &nbsp;</span>{" "}
+              <span>New to Zksync? &nbsp;</span>{" "}
               <ExternalLink href="https://ethereum.org/wallets/">
                 Learn more about wallets
               </ExternalLink>

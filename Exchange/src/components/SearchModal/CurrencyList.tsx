@@ -4,8 +4,8 @@ import {
   currencyEquals,
   ETHER,
   JSBI,
-  Token,
-} from "@vixelloswap/sdk";
+  Token
+} from "@zksyncswap/sdk";
 import React, { CSSProperties, memo, useContext, useMemo } from "react";
 import { FixedSizeList } from "react-window";
 import { Text } from "rebass";
@@ -15,7 +15,7 @@ import { useAllTokens } from "../../hooks/Tokens";
 import { useDefaultTokenList } from "../../state/lists/hooks";
 import {
   useAddUserToken,
-  useRemoveUserAddedToken,
+  useRemoveUserAddedToken
 } from "../../state/user/hooks";
 import { useETHBalances } from "../../state/wallet/hooks";
 import { LinkStyledButton, TYPE } from "../../theme";

@@ -8,8 +8,8 @@ import {
   Percent,
   Token,
   TokenAmount,
-  WETH,
-} from "@vixelloswap/sdk";
+  WETH
+} from "@zksyncswap/sdk";
 import React, { useCallback, useMemo, useState } from "react";
 import ReactGA from "react-ga";
 import { Redirect, RouteComponentProps } from "react-router";
@@ -23,7 +23,7 @@ import { AutoRow, RowBetween, RowFixed } from "../../components/Row";
 import { Dots } from "../../components/swap/styleds";
 import {
   DEFAULT_DEADLINE_FROM_NOW,
-  INITIAL_ALLOWED_SLIPPAGE,
+  INITIAL_ALLOWED_SLIPPAGE
 } from "../../constants";
 import { MIGRATOR_ADDRESS } from "../../constants/abis/migrator";
 import { PairState, usePair } from "../../data/Reserves";
@@ -32,16 +32,16 @@ import { useActiveWeb3React } from "../../hooks";
 import { useToken } from "../../hooks/Tokens";
 import {
   ApprovalState,
-  useApproveCallback,
+  useApproveCallback
 } from "../../hooks/useApproveCallback";
 import {
   useV1ExchangeContract,
-  useV2MigratorContract,
+  useV2MigratorContract
 } from "../../hooks/useContract";
 import { NEVER_RELOAD, useSingleCallResult } from "../../state/multicall/hooks";
 import {
   useIsTransactionPending,
-  useTransactionAdder,
+  useTransactionAdder
 } from "../../state/transactions/hooks";
 import { useETHBalances, useTokenBalance } from "../../state/wallet/hooks";
 import { BackArrow, ExternalLink, TYPE } from "../../theme";
@@ -102,7 +102,7 @@ export function V1LiquidityInfo({
                 currencyAmount={liquidityTokenAmount}
               />
             }{" "}
-            {token.equals(WETH[chainId]) ? "WETH" : token.symbol}/NEON
+            {token.equals(WETH[chainId]) ? "WETH" : token.symbol}/ETH
           </TYPE.mediumHeader>
         </div>
       </AutoRow>
@@ -302,26 +302,26 @@ function V1PairMigration({
             <RowBetween>
               <TYPE.body>V1 Price:</TYPE.body>
               <TYPE.black>
-                {v1SpotPrice?.toSignificant(6)} {token.symbol}/NEON
+                {v1SpotPrice?.toSignificant(6)} {token.symbol}/ETH
               </TYPE.black>
             </RowBetween>
             <RowBetween>
               <div />
               <TYPE.black>
-                {v1SpotPrice?.invert()?.toSignificant(6)} NEON/{token.symbol}
+                {v1SpotPrice?.invert()?.toSignificant(6)} ETH/{token.symbol}
               </TYPE.black>
             </RowBetween>
 
             <RowBetween>
               <TYPE.body>V2 Price:</TYPE.body>
               <TYPE.black>
-                {v2SpotPrice?.toSignificant(6)} {token.symbol}/NEON
+                {v2SpotPrice?.toSignificant(6)} {token.symbol}/ETH
               </TYPE.black>
             </RowBetween>
             <RowBetween>
               <div />
               <TYPE.black>
-                {v2SpotPrice?.invert()?.toSignificant(6)} NEON/{token.symbol}
+                {v2SpotPrice?.invert()?.toSignificant(6)} ETH/{token.symbol}
               </TYPE.black>
             </RowBetween>
 
@@ -347,13 +347,13 @@ function V1PairMigration({
             <RowBetween>
               <TYPE.body>V1 Price:</TYPE.body>
               <TYPE.black>
-                {v1SpotPrice?.toSignificant(6)} {token.symbol}/NEON
+                {v1SpotPrice?.toSignificant(6)} {token.symbol}/ETH
               </TYPE.black>
             </RowBetween>
             <RowBetween>
               <div />
               <TYPE.black>
-                {v1SpotPrice?.invert()?.toSignificant(6)} NEON/{token.symbol}
+                {v1SpotPrice?.invert()?.toSignificant(6)} ETH/{token.symbol}
               </TYPE.black>
             </RowBetween>
           </AutoColumn>
@@ -408,7 +408,7 @@ function V1PairMigration({
         </div>
       </LightCard>
       <TYPE.darkGray style={{ textAlign: "center" }}>
-        {`Your Uniswap V1 ${token.symbol}/NEON liquidity will become Uniswap V2 ${token.symbol}/NEON liquidity.`}
+        {`Your Uniswap V1 ${token.symbol}/ETH liquidity will become Uniswap V2 ${token.symbol}/ETH liquidity.`}
       </TYPE.darkGray>
     </AutoColumn>
   );

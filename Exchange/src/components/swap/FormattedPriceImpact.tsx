@@ -1,8 +1,8 @@
-import { Percent } from "@vixelloswap/sdk";
+import { Percent } from "@zksyncswap/sdk";
+import React from "react";
 import { ONE_BIPS } from "../../constants";
 import { warningSeverity } from "../../utils/prices";
 import { ErrorText } from "./styleds";
-import React from "react";
 /**
  * Formatted version of price impact text with warning colors
  */

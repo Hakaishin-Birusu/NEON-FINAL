@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from "@vixelloswap/sdk";
+import { Currency, ETHER, Token } from "@zksyncswap/sdk";
 import React, { useState } from "react";
 import styled from "styled-components";
 
